@@ -1,0 +1,6 @@
+framework module Pods_JonahsWhale {
+  umbrella header "Pods-JonahsWhale-umbrella.h"
+
+  export *
+  module * { export * }
+}

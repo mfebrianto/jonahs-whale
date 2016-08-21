@@ -12,9 +12,12 @@
 		87B55DF41D69B7F200E298EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF21D69B7F200E298EB /* Main.storyboard */; };
 		87B55DF61D69B7F200E298EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF51D69B7F200E298EB /* Assets.xcassets */; };
 		87B55DF91D69B7F200E298EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF71D69B7F200E298EB /* LaunchScreen.storyboard */; };
+		98FC1213D398E97E57E9AD55 /* Pods_JonahsWhale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JonahsWhale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.release.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.release.xcconfig"; sourceTree = "<group>"; };
 		87B55DEB1D69B7F100E298EB /* JonahsWhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JonahsWhale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B55DEE1D69B7F200E298EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87B55DF01D69B7F200E298EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		87B55DF51D69B7F200E298EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87B55DF81D69B7F200E298EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87B55DFA1D69B7F200E298EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FC1213D398E97E57E9AD55 /* Pods_JonahsWhale.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4862EFBAEA4134FACF30385B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87B55DE21D69B7F100E298EB = {
 			isa = PBXGroup;
 			children = (
 				87B55DED1D69B7F200E298EB /* JonahsWhale */,
 				87B55DEC1D69B7F100E298EB /* Products */,
+				E7134416ED48BAD806BC7146 /* Pods */,
+				4862EFBAEA4134FACF30385B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = JonahsWhale;
 			sourceTree = "<group>";
 		};
+		E7134416ED48BAD806BC7146 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */,
+				735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87B55DFD1D69B7F200E298EB /* Build configuration list for PBXNativeTarget "JonahsWhale" */;
 			buildPhases = (
+				D639114613FB8BA09B46C825 /* [CP] Check Pods Manifest.lock */,
 				87B55DE71D69B7F100E298EB /* Sources */,
 				87B55DE81D69B7F100E298EB /* Frameworks */,
 				87B55DE91D69B7F100E298EB /* Resources */,
+				C8E7C207197F22EB82BBACC2 /* [CP] Embed Pods Frameworks */,
+				8CF0AE0E11D90914C7C73771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8CF0AE0E11D90914C7C73771 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E7C207197F22EB82BBACC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D639114613FB8BA09B46C825 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87B55DE71D69B7F100E298EB /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		87B55DFE1D69B7F200E298EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JonahsWhale/Info.plist;
@@ -260,6 +336,7 @@
 		};
 		87B55DFF1D69B7F200E298EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JonahsWhale/Info.plist;
@@ -288,6 +365,7 @@
 				87B55DFF1D69B7F200E298EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
