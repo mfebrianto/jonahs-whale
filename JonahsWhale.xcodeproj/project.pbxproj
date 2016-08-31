@@ -7,17 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA3F1D7654DA00A4DAB2 /* Constants.swift */; };
+		8798AA421D76623C00A4DAB2 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA411D76623C00A4DAB2 /* WebService.swift */; };
+		8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA441D7674B200A4DAB2 /* ProjectService.swift */; };
+		8798AA481D76750700A4DAB2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA471D76750700A4DAB2 /* Project.swift */; };
 		87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55DEE1D69B7F200E298EB /* AppDelegate.swift */; };
 		87B55DF11D69B7F200E298EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55DF01D69B7F200E298EB /* ViewController.swift */; };
 		87B55DF41D69B7F200E298EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF21D69B7F200E298EB /* Main.storyboard */; };
 		87B55DF61D69B7F200E298EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF51D69B7F200E298EB /* Assets.xcassets */; };
 		87B55DF91D69B7F200E298EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF71D69B7F200E298EB /* LaunchScreen.storyboard */; };
+		87B55E021D6CFF4D00E298EB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55E011D6CFF4D00E298EB /* Core.swift */; };
 		98FC1213D398E97E57E9AD55 /* Pods_JonahsWhale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JonahsWhale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.release.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.release.xcconfig"; sourceTree = "<group>"; };
+		8798AA3F1D7654DA00A4DAB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8798AA411D76623C00A4DAB2 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		8798AA441D7674B200A4DAB2 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		8798AA471D76750700A4DAB2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		87B55DEB1D69B7F100E298EB /* JonahsWhale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JonahsWhale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B55DEE1D69B7F200E298EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87B55DF01D69B7F200E298EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +34,7 @@
 		87B55DF51D69B7F200E298EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87B55DF81D69B7F200E298EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87B55DFA1D69B7F200E298EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87B55E011D6CFF4D00E298EB /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +58,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8798AA431D7674A100A4DAB2 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				8798AA441D7674B200A4DAB2 /* ProjectService.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		8798AA461D7674F800A4DAB2 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				8798AA471D76750700A4DAB2 /* Project.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		87B55DE21D69B7F100E298EB = {
 			isa = PBXGroup;
 			children = (
@@ -69,14 +95,27 @@
 		87B55DED1D69B7F200E298EB /* JonahsWhale */ = {
 			isa = PBXGroup;
 			children = (
+				8798AA461D7674F800A4DAB2 /* models */,
+				8798AA431D7674A100A4DAB2 /* services */,
+				87B55E001D6CFE7E00E298EB /* requests */,
 				87B55DEE1D69B7F200E298EB /* AppDelegate.swift */,
 				87B55DF01D69B7F200E298EB /* ViewController.swift */,
+				8798AA3F1D7654DA00A4DAB2 /* Constants.swift */,
 				87B55DF21D69B7F200E298EB /* Main.storyboard */,
 				87B55DF51D69B7F200E298EB /* Assets.xcassets */,
 				87B55DF71D69B7F200E298EB /* LaunchScreen.storyboard */,
 				87B55DFA1D69B7F200E298EB /* Info.plist */,
 			);
 			path = JonahsWhale;
+			sourceTree = "<group>";
+		};
+		87B55E001D6CFE7E00E298EB /* requests */ = {
+			isa = PBXGroup;
+			children = (
+				87B55E011D6CFF4D00E298EB /* Core.swift */,
+				8798AA411D76623C00A4DAB2 /* WebService.swift */,
+			);
+			name = requests;
 			sourceTree = "<group>";
 		};
 		E7134416ED48BAD806BC7146 /* Pods */ = {
@@ -212,6 +251,11 @@
 			files = (
 				87B55DF11D69B7F200E298EB /* ViewController.swift in Sources */,
 				87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */,
+				87B55E021D6CFF4D00E298EB /* Core.swift in Sources */,
+				8798AA421D76623C00A4DAB2 /* WebService.swift in Sources */,
+				8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */,
+				8798AA481D76750700A4DAB2 /* Project.swift in Sources */,
+				8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
