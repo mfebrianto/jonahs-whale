@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet var consoleText: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +24,17 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func clickGetAllObjects(sender: AnyObject) {
+        print("button clicked")
+        
+        ProjectService.getAll()
+            .success { (value) in
+                print("value = \(value)")
+                self.consoleText.text = value as! String
+            }
+            .error { (error) in
+                print("error = \(error)")                
+        }
+    }
 }
 

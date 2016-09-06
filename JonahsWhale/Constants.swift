@@ -11,8 +11,10 @@ import Foundation
 
 struct Constants {
     struct Teamcity {
-        static let uri = "https://automation.amaysim.net/";
+        static let prot = "https"
+        static let domain = "automation.amaysim.net"
         static let username = "michaelfebrianto"
         static let password = "MClairine221686"
+        static let restPath = "/httpAuth/app/rest/"
     }
 }
