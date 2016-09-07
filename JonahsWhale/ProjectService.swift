@@ -47,6 +47,23 @@ final class ProjectService {
         let xml = SWXMLHash.parse(result)
         
         print("~~~~~~~~~~"+(xml["projects"].element!.attribute(by: "count")?.text)!)
+        
+        for elem in xml["projects"]["project"].all {
+            print((elem.element!.attribute(by: "id")?.text)!)
+        }
+        
+        print(">>>>>>")
+        var projects: [Project] = []
+        do{
+            projects = try xml["projects"]["project"].value()
+        } catch {
+            print("Error info: \(error)")
+        }
+        
+        for elem in projects {
+            print(elem.webUrl)
+        }
+
 
     }
     

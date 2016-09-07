@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         ProjectService.getAll()
             .success { (value) in
                 print("value = \(value)")
-                self.consoleText.text = value as! String
+                self.consoleText.text = value
             }
             .error { (error) in
                 print("error = \(error)")                

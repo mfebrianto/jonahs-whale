@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import SWXMLHash
 
-class Project {
+final class Project: XMLIndexerDeserializable {
 
     var id: String
     var name: String
@@ -24,6 +25,26 @@ class Project {
         self.parentProjectId = parentProjectId
         self.href = href
         self.webUrl = webUrl
+    }
+    
+    static func deserialize(node: XMLIndexer) throws -> Project {
+        return try Project(
+            id: node.value(ofAttribute: "id"),
+            name: node.value(ofAttribute: "name"),
+            description: "",
+            parentProjectId: "",
+            href: node.value(ofAttribute: "href"),
+            webUrl: node.value(ofAttribute: "webUrl")
+        )
+    }
+    
+    static func validate(value: String) -> String {
+        if value.isEmpty {
+            return ""
+        }
+        else {
+            return value
+        }
     }
     
 }
