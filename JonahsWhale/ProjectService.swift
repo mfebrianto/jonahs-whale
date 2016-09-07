@@ -12,10 +12,10 @@ import Alamofire
 
 final class ProjectService {
     
-    var valueHandle :((AnyObject) -> ())?
+    var valueHandle :((String) -> ())?
     var errorHandle :((NSError)->())?
     
-    func success(value:(AnyObject) -> ())->Self{
+    func success(value:(String) -> ())->Self{
         //pass success handle
         self.valueHandle = value
         return self
@@ -43,6 +43,13 @@ final class ProjectService {
         return getAll(.GET, urlString: url )
     }
     
+    static func parse(result: String){
+        let xml = SWXMLHash.parse(result)
+        
+        print("~~~~~~~~~~"+(xml["projects"].element!.attribute(by: "count")?.text)!)
+
+    }
+    
     static func getAll(method:Alamofire.Method , urlString:String) -> ProjectService {
         let projectService = ProjectService()
         Alamofire.request(method, urlString)
@@ -53,6 +60,9 @@ final class ProjectService {
                     //invoke with your back userobj
                     projectService.valueHandle?(value)
                     print(value)
+                    parse(value)
+                    
+                    
                 case .Failure(let error):
                     projectService.errorHandle?(error)
                 }
