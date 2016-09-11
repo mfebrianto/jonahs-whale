@@ -27,10 +27,8 @@ final class Project: XMLIndexerDeserializable {
         self.webUrl = webUrl
     }
     
-    static func deserialize(node: XMLIndexer) throws -> Project {
-        
-        var description: String
-        var parentProjectId: String
+    static func getDescription(node: XMLIndexer) -> String {
+        var description: String = ""
         
         do {
             try description = node.value(ofAttribute: "description")
@@ -38,6 +36,15 @@ final class Project: XMLIndexerDeserializable {
         catch is XMLDeserializationError {
             description = ""
         }
+        catch {
+            print(NSThread.callStackSymbols())
+        }
+
+        return description
+    }
+    
+    static func getParentProjectId(node: XMLIndexer) -> String {
+        var parentProjectId: String = ""
         
         do {
             try parentProjectId = node.value(ofAttribute: "parentProjectId")
@@ -45,12 +52,20 @@ final class Project: XMLIndexerDeserializable {
         catch is XMLDeserializationError {
             parentProjectId = ""
         }
+        catch {
+            print(NSThread.callStackSymbols())
+        }
         
+        return parentProjectId
+    }
+    
+    
+    static func deserialize(node: XMLIndexer) throws -> Project {
         return try Project(
             id: node.value(ofAttribute: "id"),
             name: node.value(ofAttribute: "name"),
-            description: description,
-            parentProjectId: parentProjectId,
+            description: getDescription(node),
+            parentProjectId: getParentProjectId(node),
             href: node.value(ofAttribute: "href"),
             webUrl: node.value(ofAttribute: "webUrl")
         )
