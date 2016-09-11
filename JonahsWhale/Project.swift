@@ -28,11 +28,29 @@ final class Project: XMLIndexerDeserializable {
     }
     
     static func deserialize(node: XMLIndexer) throws -> Project {
+        
+        var description: String
+        var parentProjectId: String
+        
+        do {
+            try description = node.value(ofAttribute: "description")
+        }
+        catch is XMLDeserializationError {
+            description = ""
+        }
+        
+        do {
+            try parentProjectId = node.value(ofAttribute: "parentProjectId")
+        }
+        catch is XMLDeserializationError {
+            parentProjectId = ""
+        }
+        
         return try Project(
             id: node.value(ofAttribute: "id"),
             name: node.value(ofAttribute: "name"),
-            description: "",
-            parentProjectId: "",
+            description: description,
+            parentProjectId: parentProjectId,
             href: node.value(ofAttribute: "href"),
             webUrl: node.value(ofAttribute: "webUrl")
         )
