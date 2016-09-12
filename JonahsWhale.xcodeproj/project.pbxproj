@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4751D867B4600286FAE /* GalleryViewController.swift */; };
+		8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4781D87491C00286FAE /* GalleryViewCell.swift */; };
 		8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA3F1D7654DA00A4DAB2 /* Constants.swift */; };
 		8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA441D7674B200A4DAB2 /* ProjectService.swift */; };
 		8798AA481D76750700A4DAB2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA471D76750700A4DAB2 /* Project.swift */; };
@@ -23,6 +24,7 @@
 		648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JonahsWhale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.release.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.release.xcconfig"; sourceTree = "<group>"; };
 		8785B4751D867B4600286FAE /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		8785B4781D87491C00286FAE /* GalleryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
 		8798AA3F1D7654DA00A4DAB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8798AA441D7674B200A4DAB2 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		8798AA471D76750700A4DAB2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 				648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8785B4771D8748ED00286FAE /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				8785B4781D87491C00286FAE /* GalleryViewCell.swift */,
+			);
+			name = ui;
 			sourceTree = "<group>";
 		};
 		8798AA431D7674A100A4DAB2 /* services */ = {
@@ -93,6 +103,7 @@
 		87B55DED1D69B7F200E298EB /* JonahsWhale */ = {
 			isa = PBXGroup;
 			children = (
+				8785B4771D8748ED00286FAE /* ui */,
 				8798AA461D7674F800A4DAB2 /* models */,
 				8798AA431D7674A100A4DAB2 /* services */,
 				87B55DEE1D69B7F200E298EB /* AppDelegate.swift */,
@@ -242,6 +253,7 @@
 				87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */,
 				8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */,
 				8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */,
+				8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */,
 				8798AA481D76750700A4DAB2 /* Project.swift in Sources */,
 				8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */,
 			);
