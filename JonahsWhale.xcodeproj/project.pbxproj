@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4751D867B4600286FAE /* GalleryViewController.swift */; };
 		8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA3F1D7654DA00A4DAB2 /* Constants.swift */; };
 		8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA441D7674B200A4DAB2 /* ProjectService.swift */; };
 		8798AA481D76750700A4DAB2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA471D76750700A4DAB2 /* Project.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JonahsWhale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.release.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.release.xcconfig"; sourceTree = "<group>"; };
+		8785B4751D867B4600286FAE /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		8798AA3F1D7654DA00A4DAB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8798AA441D7674B200A4DAB2 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		8798AA471D76750700A4DAB2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				8798AA431D7674A100A4DAB2 /* services */,
 				87B55DEE1D69B7F200E298EB /* AppDelegate.swift */,
 				87B55DF01D69B7F200E298EB /* ViewController.swift */,
+				8785B4751D867B4600286FAE /* GalleryViewController.swift */,
 				8798AA3F1D7654DA00A4DAB2 /* Constants.swift */,
 				87B55DF21D69B7F200E298EB /* Main.storyboard */,
 				87B55DF51D69B7F200E298EB /* Assets.xcassets */,
@@ -238,6 +241,7 @@
 				87B55DF11D69B7F200E298EB /* ViewController.swift in Sources */,
 				87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */,
 				8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */,
+				8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */,
 				8798AA481D76750700A4DAB2 /* Project.swift in Sources */,
 				8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */,
 			);

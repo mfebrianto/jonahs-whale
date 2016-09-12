@@ -31,6 +31,9 @@ class ViewController: UIViewController {
             .success { (value) in
                 print("value = \(value)")
                 self.consoleText.text = value
+                
+                self.performSegueWithIdentifier("segueGalleryViewController", sender: self)
+                
             }
             .error { (error) in
                 print("error = \(error)")                

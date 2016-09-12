@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '42DA380E018F6F21487A88B63E89BE12'
-               BlueprintName = 'SWXMLHash'
+               BlueprintIdentifier = 'E3A6C83908C00CE39392A3DE8671AD26'
+               BlueprintName = 'RAReorderableLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SWXMLHash.framework'>
+               BuildableName = 'RAReorderableLayout.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

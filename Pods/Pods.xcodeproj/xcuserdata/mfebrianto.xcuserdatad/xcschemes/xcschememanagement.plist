@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RAReorderableLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SWXMLHash.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>42DA380E018F6F21487A88B63E89BE12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4AB93593E6A874464971102DE02B5D33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA68D1A102FF573A3F1B5B1A8C012818</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F92F8003D2A3DC778AD4418049D7B317</key>
+		<key>E3A6C83908C00CE39392A3DE8671AD26</key>
 		<dict>
 			<key>primary</key>
 			<true/>

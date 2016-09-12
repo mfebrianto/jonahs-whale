@@ -5,4 +5,5 @@ use_frameworks!
 target 'JonahsWhale' do
   pod 'Alamofire', '~> 3.4'
   pod 'SWXMLHash', '~> 2.5.0'
+  pod 'RAReorderableLayout'
 end
