@@ -11,6 +11,8 @@ import UIKit
 
 class GalleryViewCell: UICollectionViewCell {
     
-    @IBOutlet var label: UILabel!
     
+    @IBOutlet var dummyLabel: UILabel!
+    
+
 }

@@ -27,17 +27,19 @@ class ViewController: UIViewController {
     @IBAction func clickGetAllObjects(sender: AnyObject) {
         print("button clicked")
         
-        ProjectService.getAll()
-            .success { (value) in
-                print("value = \(value)")
-                self.consoleText.text = value
-                
-                self.performSegueWithIdentifier("segueGalleryViewController", sender: self)
-                
-            }
-            .error { (error) in
-                print("error = \(error)")                
-        }
+//        ProjectService.getAll()
+//            .success { (value) in
+//                print("value = \(value)")
+//                self.consoleText.text = value
+//                
+//                self.performSegueWithIdentifier("segueGalleryViewController", sender: self)
+//                
+//            }
+//            .error { (error) in
+//                print("error = \(error)")                
+//        }
+        
+        self.performSegueWithIdentifier("segueGalleryViewController", sender: self)
     }
 }
 

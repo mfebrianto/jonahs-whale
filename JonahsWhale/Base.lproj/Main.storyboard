@@ -57,21 +57,21 @@
                                 <rect key="frame" x="20" y="20" width="545" height="560"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJi-JF-Qrj">
-                                    <size key="itemSize" width="76" height="71"/>
+                                    <size key="itemSize" width="116" height="84"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="galleryCollectionCell" id="pJd-5R-ruH" customClass="GalleryViewCell" customModule="JonahsWhale" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="71"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="76" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-gH-MvP">
-                                                    <rect key="frame" x="17" y="25" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-pO-A6e">
+                                                    <rect key="frame" x="8" y="31" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -81,10 +81,14 @@
                                         </view>
                                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="label" destination="cyn-gH-MvP" id="uuj-Sk-7Fq"/>
+                                            <outlet property="dummyLabel" destination="uhQ-pO-A6e" id="plX-dB-aar"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ns7-sf-ky3" id="i7D-7L-Far"/>
+                                    <outlet property="delegate" destination="Ns7-sf-ky3" id="b22-ha-pAR"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
