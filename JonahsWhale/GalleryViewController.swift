@@ -110,4 +110,60 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenRect = UIScreen.mainScreen().bounds
+        let screenWidth: CGFloat = screenRect.size.width
+        let cellWidth: Float = Float(screenWidth) / 5.0
+        //Replace the divisor with the column count requirement. Make sure to have it in float.
+        let size = CGSizeMake(CGFloat(cellWidth), CGFloat(cellWidth))
+        return size
+    }
+    
+    
+//    func collectionView(collectionView: UICollectionView, atIndexPath: NSIndexPath, willMoveToIndexPath toIndexPath: NSIndexPath) {
+//        print(">>>>>>>>1")
+//    }
+//    func collectionView(collectionView: UICollectionView, atIndexPath: NSIndexPath, didMoveToIndexPath toIndexPath: NSIndexPath) {
+//        print(">>>>>>>>2")
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, allowMoveAtIndexPath indexPath: NSIndexPath) -> Bool  {
+//        print(">>>>>>>>3")
+//        
+//        return true
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, atIndexPath: NSIndexPath, canMoveToIndexPath: NSIndexPath) -> Bool  {
+//        print(">>>>>>>>4")
+//        
+//        return true
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, collectionViewLayout layout: RAReorderableLayout, willBeginDraggingItemAtIndexPath indexPath: NSIndexPath)  {
+//        print(">>>>>>>>5")
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, collectionViewLayout layout: RAReorderableLayout, didBeginDraggingItemAtIndexPath indexPath: NSIndexPath) {
+//        print(">>>>>>>>6")
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, collectionViewLayout layout: RAReorderableLayout, willEndDraggingItemToIndexPath indexPath: NSIndexPath) {
+//        print(">>>>>>>>7")
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, collectionViewLayout layout: RAReorderableLayout, didEndDraggingItemToIndexPath indexPath: NSIndexPath) {
+//        print(">>>>>>>>8")
+//    }
+    
+//    func collectionView(collectionView: UICollectionView, reorderingItemAlphaInSection section: Int) -> CGFloat
+//    func scrollTrigerEdgeInsetsInCollectionView(collectionView: UICollectionView) -> UIEdgeInsets
+//    func scrollTrigerPaddingInCollectionView(collectionView: UICollectionView) -> UIEdgeInsets
+//    func scrollSpeedValueInCollectionView(collectionView: UICollectionView) -> CGFloat
+    
 }
