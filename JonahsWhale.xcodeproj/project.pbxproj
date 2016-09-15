@@ -173,6 +173,7 @@
 				TargetAttributes = {
 					87B55DEA1D69B7F100E298EB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = C57L7P8RB7;
 					};
 				};
 			};
@@ -383,10 +384,13 @@
 			baseConfigurationReference = D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JonahsWhale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mfebrianto.engineering.JonahsWhale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -395,10 +399,13 @@
 			baseConfigurationReference = 735D7718CAFB156A19693C50 /* Pods-JonahsWhale.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JonahsWhale/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mfebrianto.engineering.JonahsWhale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
