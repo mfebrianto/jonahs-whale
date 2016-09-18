@@ -24,25 +24,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XCGLogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>42DA380E018F6F21487A88B63E89BE12</key>
+		<key>03D58D2F2F62453CA39212710099A719</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4AB93593E6A874464971102DE02B5D33</key>
+		<key>148D02153E58465B51D957E2A9ABE683</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>348B236FEE2BA2C63A998E8A02E7D33B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>402809BA504D87970EDC3256ECEB254F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3A6C83908C00CE39392A3DE8671AD26</key>
 		<dict>
 			<key>primary</key>
 			<true/>

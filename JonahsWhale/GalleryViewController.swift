@@ -95,7 +95,7 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
 //        if indexPath.section == 0 {
 //            
 //            print(">>>>>>>>>index>>0>>"+String(indexPath.item))
-//            
+//
 //            cell.label = label0[indexPath.item]
 //        }else {
 //            
@@ -166,4 +166,10 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
 //    func scrollTrigerPaddingInCollectionView(collectionView: UICollectionView) -> UIEdgeInsets
 //    func scrollSpeedValueInCollectionView(collectionView: UICollectionView) -> CGFloat
     
+    @IBAction func clickBack(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("segueViewFrGallery", sender: self)
+        
+    }
+
 }

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,19 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0y-Wv-7mS">
-                                <rect key="frame" x="248" y="173" width="104" height="30"/>
-                                <state key="normal" title="get All Projects"/>
-                                <connections>
-                                    <action selector="clickGetAllObjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dP-UI-40W"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjw-cL-zIv">
                                 <rect key="frame" x="180" y="272" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0y-Wv-7mS">
+                                <rect key="frame" x="243" y="212" width="104" height="30"/>
+                                <state key="normal" title="get All Projects"/>
+                                <connections>
+                                    <action selector="clickGetAllObjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dP-UI-40W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-KY-9MO">
+                                <rect key="frame" x="211" y="154" width="179" height="30"/>
+                                <state key="normal" title="Configure Projects"/>
+                                <connections>
+                                    <action selector="clickConfigureProjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gAt-li-Ytj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -41,6 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="164" y="179"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="LON-Tb-VCX">
@@ -91,20 +98,26 @@
                                     <outlet property="delegate" destination="Ns7-sf-ky3" id="b22-ha-pAR"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uy3-dR-cOz">
+                                <rect key="frame" x="275" y="479" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="clickBack:" destination="Ns7-sf-ky3" eventType="touchUpInside" id="vIM-Ux-TrQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ne1-ME-zpp" firstAttribute="top" secondItem="y22-YY-Ts8" secondAttribute="bottom" constant="20" id="6yW-dL-HRQ"/>
                             <constraint firstItem="Ne1-ME-zpp" firstAttribute="leading" secondItem="EcV-YK-V6b" secondAttribute="leading" constant="20" id="RVS-P2-aJj"/>
-                            <constraint firstItem="Ne1-ME-zpp" firstAttribute="leading" secondItem="EcV-YK-V6b" secondAttribute="leadingMargin" constant="20" id="Xhd-Cf-nl3"/>
                             <constraint firstItem="8G0-8b-Yj7" firstAttribute="top" secondItem="Ne1-ME-zpp" secondAttribute="bottom" constant="20" id="epa-m9-5wd"/>
                             <constraint firstItem="Ne1-ME-zpp" firstAttribute="top" secondItem="EcV-YK-V6b" secondAttribute="top" constant="20" id="fHe-3d-EVA"/>
                             <constraint firstAttribute="trailing" secondItem="Ne1-ME-zpp" secondAttribute="trailing" constant="20" id="leb-Pu-tUR"/>
-                            <constraint firstItem="8G0-8b-Yj7" firstAttribute="top" secondItem="Ne1-ME-zpp" secondAttribute="bottom" constant="20" id="oGc-iK-xoB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="galleryCollectionView" destination="Ne1-ME-zpp" id="nea-AR-39P"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueViewFrGallery" id="eEs-pj-KxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgm-qG-4Lv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,8 +9,12 @@
 import Foundation
 import SWXMLHash
 import Alamofire
+import XCGLogger
+import CoreData
 
 final class ProjectService {
+    
+    let log = XCGLogger.defaultInstance()
     
     var valueHandle :((String) -> ())?
     var errorHandle :((NSError)->())?
@@ -27,63 +31,72 @@ final class ProjectService {
         return self
     }
     
-    static func getAll()->ProjectService{
+    static func parse(result: String) -> [ProjectXml] {
+        let parsedXml = SWXMLHash.parse(result)
+        var projectXmls: [ProjectXml] = []
         
-        print("getAll()")
+        do{
+            projectXmls = try parsedXml["projects"]["project"].value()
+        } catch {
+            print("Error info: \(error)")
+        }
         
-        //concatenate string for request
+        return projectXmls
+    }
+    
+    static func saveAll(projectXmls: [ProjectXml]){
+        let dataController = DataController().managedObjectContext
+        let log = XCGLogger.defaultInstance()
+
+        let entity =  NSEntityDescription.entityForName("Project",
+                                                        inManagedObjectContext:dataController)
+        
+        for projectXml in projectXmls {
+            let project = NSManagedObject(entity: entity!,
+                                          insertIntoManagedObjectContext: dataController)
+            
+            log.debug("trying to save : " + projectXml.name!)
+
+            project.setValue(projectXml.id, forKey: "id")
+            project.setValue(projectXml.name, forKey: "name")
+            project.setValue(projectXml.desc, forKey: "desc")
+            project.setValue(projectXml.parentProjectId, forKey: "parentProjectId")
+            project.setValue(projectXml.href, forKey: "href")
+            project.setValue(projectXml.webUrl, forKey: "webUrl")
+            
+            do {
+                try dataController.save()
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+        }
+        
+
+    }
+    
+    static func getAll() -> ProjectService {
+        let projectService = ProjectService()
         let url = Constants.Teamcity.prot + "://" +
             Constants.Teamcity.username + ":" +
             Constants.Teamcity.password + "@" +
             Constants.Teamcity.domain +
             Constants.Teamcity.restPath + "projects"
-        
-        print("getAll()>>>>"+url)
 
-        return getAll(.GET, urlString: url )
-    }
-    
-    static func parse(result: String){
-        let xml = SWXMLHash.parse(result)
         
-        print("~~~~~~~~~~"+(xml["projects"].element!.attribute(by: "count")?.text)!)
-        
-        for elem in xml["projects"]["project"].all {
-            print((elem.element!.attribute(by: "id")?.text)!)
-        }
-        
-        print(">>>>>>")
-        var projects: [Project] = []
-        do{
-            projects = try xml["projects"]["project"].value()
-        } catch {
-            print("Error info: \(error)")
-        }
-        
-        for elem in projects {
-            print(elem.webUrl)
-        }
-
-
-    }
-    
-    static func getAll(method:Alamofire.Method , urlString:String) -> ProjectService {
-        let projectService = ProjectService()
-        Alamofire.request(method, urlString)
+        Alamofire.request(.GET, url)
             .validate()
             .responseString { response in
                 switch response.result {
                 case .Success(let value):
-                    //invoke with your back userobj
                     projectService.valueHandle?(value)
-                    print(value)
-                    parse(value)
-                    
+                    let projectXmls = parse(value)
+                    saveAll(projectXmls)
                     
                 case .Failure(let error):
                     projectService.errorHandle?(error)
                 }
         }
+        
         return projectService
     }
     
