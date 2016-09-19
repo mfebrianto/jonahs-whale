@@ -17,10 +17,10 @@ class ProjectController {
         
         var projects:[Project] = []
         
-        //2
-        let fetchRequest = NSFetchRequest(entityName: "Project")
+        let fetchRequest = NSFetchRequest()
+        let entityDescription = NSEntityDescription.entityForName("Project", inManagedObjectContext: dataController)
+        fetchRequest.entity = entityDescription
         
-        //3
         do {
             let results = try dataController.executeFetchRequest(fetchRequest)
             projects = results as! [Project]
@@ -29,7 +29,5 @@ class ProjectController {
         }
         
         return projects
-        
     }
-    
 }
