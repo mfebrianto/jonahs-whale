@@ -15,26 +15,56 @@ class ProjectDao {
     
     let entityName = "Project"
     let log = XCGLogger.defaultInstance()
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    func saveAll(projectXmls: [ProjectXml]) {
+        let managedContext = appDelegate.managedObjectContext
+        let entity =  NSEntityDescription.entityForName(entityName, inManagedObjectContext:managedContext)
+        
+            for projectXml in projectXmls {
+                let project = NSManagedObject(entity: entity!,
+                                        insertIntoManagedObjectContext:managedContext)
+        
+                log.debug("trying to save : " + projectXml.name!)
+        
+                project.setValue(projectXml.id, forKey: "id")
+                project.setValue(projectXml.name, forKey: "name")
+                project.setValue(projectXml.desc, forKey: "desc")
+                project.setValue(projectXml.parentProjectId, forKey: "parentProjectId")
+                project.setValue(projectXml.href, forKey: "href")
+                project.setValue(projectXml.webUrl, forKey: "webUrl")
+        
+                do {
+                    try managedContext.save()
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                }
+            }
 
+        
+    }
     
     func deleteAll() {
-    
-//        dataContext.projects.filter({ $0.id != nil }).delete()
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
+        } catch {
+            print (error)
+        }
+        
         
     }
     
     func getAll() -> [Project] {
-        
-        var projects:[Project] = []
-        
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        
         let managedContext = appDelegate.managedObjectContext
+        var projects:[Project] = []
         
         let fetchRequest = NSFetchRequest(entityName: entityName)
         
-        //3
         do {
             let results =
                 try managedContext.executeFetchRequest(fetchRequest)
