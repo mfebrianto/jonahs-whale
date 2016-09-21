@@ -10,9 +10,8 @@
 		872980431D8958120037D5B0 /* RAReorderableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872980421D8958120037D5B0 /* RAReorderableLayout.swift */; };
 		8762985D1D8B2EE800AA857A /* JonahsWhale.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8762985B1D8B2EE800AA857A /* JonahsWhale.xcdatamodeld */; };
 		8762985F1D8B4D9F00AA857A /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762985E1D8B4D9F00AA857A /* Project+CoreDataProperties.swift */; };
-		876298611D8B4F5E00AA857A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876298601D8B4F5E00AA857A /* DataController.swift */; };
 		876298641D8F1C8D00AA857A /* ProjectXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876298631D8F1C8D00AA857A /* ProjectXml.swift */; };
-		876298671D8F3FC500AA857A /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876298661D8F3FC500AA857A /* ProjectController.swift */; };
+		876298671D8F3FC500AA857A /* ProjectDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876298661D8F3FC500AA857A /* ProjectDao.swift */; };
 		8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4751D867B4600286FAE /* GalleryViewController.swift */; };
 		8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4781D87491C00286FAE /* GalleryViewCell.swift */; };
 		8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA3F1D7654DA00A4DAB2 /* Constants.swift */; };
@@ -32,9 +31,8 @@
 		872980421D8958120037D5B0 /* RAReorderableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAReorderableLayout.swift; sourceTree = "<group>"; };
 		8762985C1D8B2EE800AA857A /* JonahsWhale.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JonahsWhale.xcdatamodel; sourceTree = "<group>"; };
 		8762985E1D8B4D9F00AA857A /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		876298601D8B4F5E00AA857A /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		876298631D8F1C8D00AA857A /* ProjectXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectXml.swift; sourceTree = "<group>"; };
-		876298661D8F3FC500AA857A /* ProjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
+		876298661D8F3FC500AA857A /* ProjectDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDao.swift; sourceTree = "<group>"; };
 		8785B4751D867B4600286FAE /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		8785B4781D87491C00286FAE /* GalleryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
 		8798AA3F1D7654DA00A4DAB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		872980411D8957F90037D5B0 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				876298601D8B4F5E00AA857A /* DataController.swift */,
 				872980421D8958120037D5B0 /* RAReorderableLayout.swift */,
 			);
 			name = libs;
@@ -87,12 +84,12 @@
 			name = xml;
 			sourceTree = "<group>";
 		};
-		876298651D8F3FB700AA857A /* controllers */ = {
+		876298651D8F3FB700AA857A /* dao */ = {
 			isa = PBXGroup;
 			children = (
-				876298661D8F3FC500AA857A /* ProjectController.swift */,
+				876298661D8F3FC500AA857A /* ProjectDao.swift */,
 			);
-			name = controllers;
+			name = dao;
 			sourceTree = "<group>";
 		};
 		8785B4771D8748ED00286FAE /* ui */ = {
@@ -142,7 +139,7 @@
 		87B55DED1D69B7F200E298EB /* JonahsWhale */ = {
 			isa = PBXGroup;
 			children = (
-				876298651D8F3FB700AA857A /* controllers */,
+				876298651D8F3FB700AA857A /* dao */,
 				872980411D8957F90037D5B0 /* libs */,
 				8785B4771D8748ED00286FAE /* ui */,
 				8798AA461D7674F800A4DAB2 /* models */,
@@ -292,13 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876298671D8F3FC500AA857A /* ProjectController.swift in Sources */,
+				876298671D8F3FC500AA857A /* ProjectDao.swift in Sources */,
 				87B55DF11D69B7F200E298EB /* ViewController.swift in Sources */,
 				87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */,
 				8762985F1D8B4D9F00AA857A /* Project+CoreDataProperties.swift in Sources */,
 				8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */,
 				8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */,
-				876298611D8B4F5E00AA857A /* DataController.swift in Sources */,
 				872980431D8958120037D5B0 /* RAReorderableLayout.swift in Sources */,
 				876298641D8F1C8D00AA857A /* ProjectXml.swift in Sources */,
 				8762985D1D8B2EE800AA857A /* JonahsWhale.xcdatamodeld in Sources */,
