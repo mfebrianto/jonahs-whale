@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     @IBAction func clickMonitoredProjects(sender: AnyObject) {
         
-        self.performSegueWithIdentifier("fromMainToMonProjects", sender: self)
+        self.performSegueWithIdentifier("fromMainToAllProjects", sender: self)
     }
     
     

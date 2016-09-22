@@ -40,8 +40,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-9G-VJ3">
-                                <rect key="frame" x="235" y="208" width="130" height="30"/>
-                                <state key="normal" title="Monitored Projects"/>
+                                <rect key="frame" x="243" y="208" width="115" height="30"/>
+                                <state key="normal" title="show all projects"/>
                                 <connections>
                                     <action selector="clickMonitoredProjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Liu-en-mFX"/>
                                 </connections>
@@ -60,17 +60,17 @@
                     <connections>
                         <outlet property="consoleText" destination="bjw-cL-zIv" id="06I-XE-CQV"/>
                         <segue destination="Ns7-sf-ky3" kind="show" identifier="segueGalleryViewController" id="Upx-We-eir"/>
-                        <segue destination="TUv-Az-d2W" kind="show" identifier="fromMainToMonProjects" id="SIY-Iz-xz9"/>
+                        <segue destination="TUv-Az-d2W" kind="show" identifier="fromMainToAllProjects" id="SIY-Iz-xz9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976" y="179"/>
         </scene>
-        <!--Monitored Project View Controller-->
+        <!--All Projects View Controller-->
         <scene sceneID="MAS-q2-mna">
             <objects>
-                <viewController id="TUv-Az-d2W" customClass="MonitoredProjectViewController" customModule="JonahsWhale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TUv-Az-d2W" customClass="AllProjectsViewController" customModule="JonahsWhale" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9KF-rP-YdW"/>
                         <viewControllerLayoutGuide type="bottom" id="7nO-D1-hBw"/>
@@ -78,9 +78,32 @@
                     <view key="view" contentMode="scaleToFill" id="nVE-Tf-sQI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-jF-M7q">
+                                <rect key="frame" x="20" y="64" width="560" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allProjectsCell" rowHeight="40" id="JZq-mH-YUH">
+                                        <rect key="frame" x="0.0" y="92" width="560" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JZq-mH-YUH" id="xaR-9X-Sny">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7nO-D1-hBw" firstAttribute="top" secondItem="5eN-jF-M7q" secondAttribute="bottom" constant="20" id="aRA-EO-OCn"/>
+                            <constraint firstItem="5eN-jF-M7q" firstAttribute="trailing" secondItem="nVE-Tf-sQI" secondAttribute="trailingMargin" id="hlP-MK-nEy"/>
+                            <constraint firstItem="5eN-jF-M7q" firstAttribute="top" secondItem="9KF-rP-YdW" secondAttribute="bottom" constant="14" id="mL5-vu-80f"/>
+                            <constraint firstItem="5eN-jF-M7q" firstAttribute="leading" secondItem="nVE-Tf-sQI" secondAttribute="leadingMargin" id="vT4-45-sap"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="allProjectsTable" destination="5eN-jF-M7q" id="kYM-4A-rKn"/>
                         <segue destination="Vsq-xi-pBy" kind="show" id="Qi1-HA-Vx0"/>
                     </connections>
                 </viewController>
@@ -174,6 +197,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qi1-HA-Vx0"/>
+        <segue reference="eEs-pj-KxL"/>
     </inferredMetricsTieBreakers>
 </document>
