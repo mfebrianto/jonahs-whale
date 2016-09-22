@@ -19,6 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,5 +59,13 @@ class ViewController: UIViewController {
             self.consoleText.text = self.consoleText.text + "\n" + project.name!
         }
     }
+    
+    @IBAction func clickMonitoredProjects(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("fromMainToMonProjects", sender: self)
+    }
+    
+    
+    
 }
 

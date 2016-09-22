@@ -21,6 +21,8 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = false
+        self.title = "zurück";
         let nib = UINib(nibName: "galleryCollectionCell", bundle: nil)
         galleryCollectionView.registerNib(nib, forCellWithReuseIdentifier: "cell")
         galleryCollectionView.delegate = self
@@ -38,6 +40,11 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.hidden = false
+        self.title = "zurück";
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
