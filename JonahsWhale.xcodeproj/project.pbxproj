@@ -12,6 +12,7 @@
 		8762985F1D8B4D9F00AA857A /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762985E1D8B4D9F00AA857A /* Project+CoreDataProperties.swift */; };
 		876298641D8F1C8D00AA857A /* ProjectXml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876298631D8F1C8D00AA857A /* ProjectXml.swift */; };
 		876298671D8F3FC500AA857A /* ProjectDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876298661D8F3FC500AA857A /* ProjectDao.swift */; };
+		876D2CB21D936ED5002128DF /* SetupFavoriteProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2CB11D936ED5002128DF /* SetupFavoriteProjectsViewController.swift */; };
 		8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4751D867B4600286FAE /* GalleryViewController.swift */; };
 		8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4781D87491C00286FAE /* GalleryViewCell.swift */; };
 		8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA3F1D7654DA00A4DAB2 /* Constants.swift */; };
@@ -33,6 +34,7 @@
 		8762985E1D8B4D9F00AA857A /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		876298631D8F1C8D00AA857A /* ProjectXml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectXml.swift; sourceTree = "<group>"; };
 		876298661D8F3FC500AA857A /* ProjectDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDao.swift; sourceTree = "<group>"; };
+		876D2CB11D936ED5002128DF /* SetupFavoriteProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupFavoriteProjectsViewController.swift; sourceTree = "<group>"; };
 		8785B4751D867B4600286FAE /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		8785B4781D87491C00286FAE /* GalleryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
 		8798AA3F1D7654DA00A4DAB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				87B55DF01D69B7F200E298EB /* ViewController.swift */,
 				8785B4751D867B4600286FAE /* GalleryViewController.swift */,
 				8798AA3F1D7654DA00A4DAB2 /* Constants.swift */,
+				876D2CB11D936ED5002128DF /* SetupFavoriteProjectsViewController.swift */,
 				87B55DF21D69B7F200E298EB /* Main.storyboard */,
 				87B55DF51D69B7F200E298EB /* Assets.xcassets */,
 				87B55DF71D69B7F200E298EB /* LaunchScreen.storyboard */,
@@ -293,6 +296,7 @@
 				87B55DF11D69B7F200E298EB /* ViewController.swift in Sources */,
 				87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */,
 				8762985F1D8B4D9F00AA857A /* Project+CoreDataProperties.swift in Sources */,
+				876D2CB21D936ED5002128DF /* SetupFavoriteProjectsViewController.swift in Sources */,
 				8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */,
 				8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */,
 				872980431D8958120037D5B0 /* RAReorderableLayout.swift in Sources */,

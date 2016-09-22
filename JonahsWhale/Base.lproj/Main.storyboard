@@ -18,23 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjw-cL-zIv">
-                                <rect key="frame" x="180" y="272" width="240" height="128"/>
+                                <rect key="frame" x="180" y="314" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0y-Wv-7mS">
-                                <rect key="frame" x="243" y="212" width="104" height="30"/>
+                                <rect key="frame" x="243" y="145" width="104" height="30"/>
                                 <state key="normal" title="get All Projects"/>
                                 <connections>
                                     <action selector="clickGetAllObjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dP-UI-40W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-KY-9MO">
-                                <rect key="frame" x="211" y="154" width="179" height="30"/>
+                                <rect key="frame" x="211" y="77" width="179" height="30"/>
                                 <state key="normal" title="Configure Projects"/>
                                 <connections>
                                     <action selector="clickConfigureProjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gAt-li-Ytj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHx-dV-kQo">
+                                <rect key="frame" x="222" y="225" width="156" height="30"/>
+                                <state key="normal" title="Setup favorites project"/>
+                                <connections>
+                                    <action selector="setupFavProjectsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hWK-va-J1D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,11 +50,43 @@
                     <connections>
                         <outlet property="consoleText" destination="bjw-cL-zIv" id="06I-XE-CQV"/>
                         <segue destination="Ns7-sf-ky3" kind="show" identifier="segueGalleryViewController" id="Upx-We-eir"/>
+                        <segue destination="tmd-zV-966" kind="show" identifier="favProjsFrViewController" id="gHi-Kc-MdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="179"/>
+            <point key="canvasLocation" x="164" y="237"/>
+        </scene>
+        <!--Setup Favorite Projects View Controller-->
+        <scene sceneID="TOM-lv-Bgy">
+            <objects>
+                <viewController id="tmd-zV-966" customClass="SetupFavoriteProjectsViewController" customModule="JonahsWhale" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S2b-hb-lm9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gwa-fO-crB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zQP-KO-OM2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-by-Oax">
+                                <rect key="frame" x="291" y="217" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="clickBackButton:" destination="tmd-zV-966" eventType="touchUpInside" id="S3i-Jv-OaP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Ns7-sf-ky3" kind="show" id="Csb-W9-kQW"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ViewControllerFrfavProjs" id="s8V-gK-YTs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNQ-3L-LG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="1169"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="LON-Tb-VCX">
@@ -125,4 +164,8 @@
             <point key="canvasLocation" x="1097" y="229"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="s8V-gK-YTs"/>
+        <segue reference="Csb-W9-kQW"/>
+    </inferredMetricsTieBreakers>
 </document>

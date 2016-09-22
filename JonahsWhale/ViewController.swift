@@ -41,6 +41,14 @@ class ViewController: UIViewController {
             }
     }
 
+    
+    @IBAction func setupFavProjectsButton(sender: AnyObject) {
+        log.debug("setup favorite projects clicked")
+        
+        self.performSegueWithIdentifier("favProjsFrViewController", sender: self)
+        
+    }
+    
     @IBAction func clickGetAllObjects(sender: AnyObject) {
         log.debug("getting existing")
         

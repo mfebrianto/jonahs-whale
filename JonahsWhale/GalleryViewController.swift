@@ -17,7 +17,6 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
     @IBOutlet var galleryCollectionView: UICollectionView!
     
     var label0: [String] = []
-    var label1: [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +25,16 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
         
-        for index in 0..<10 {
-            let label = "Test 0"+String(index)
-            label0.append(label)
-        }
-        for index in 10..<20 {
-            let label = UILabel()
-            label.text = "Test 1"+String(index)
-            label1.append(label)
-        }
+        loadAllProjects()
         
+    }
+    
+    func loadAllProjects(){
+        let projects:[Project] = ProjectDao().getAll()
+        
+        for project in projects {
+            label0.append(project.name!)
+        }
     }
     
     
