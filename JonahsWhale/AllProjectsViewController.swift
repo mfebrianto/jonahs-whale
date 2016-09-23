@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import XCGLogger
 
-class AllProjectsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AllProjectsViewController: UIViewController {
     
     var projects: [Project] = []
     let log = XCGLogger.defaultInstance()
@@ -18,15 +18,17 @@ class AllProjectsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var allProjectsTable: UITableView!
     
     override func viewDidLoad() {
-        log.debug("viewdidLoad")
+//        log.debug("viewdidLoad")
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
         allProjectsTable.dataSource = self
         allProjectsTable.delegate = self
+
+        allProjectsTable.registerNib(UINib(nibName: "AllProjectsViewCell", bundle: nil), forCellReuseIdentifier: "AllProjectsCell")
         
-        log.debug("get all projects")
+//        log.debug("get all projects")
         projects = ProjectDao().getAll()
-        log.debug(projects.count)
+//        log.debug(projects.count)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -34,13 +36,19 @@ class AllProjectsViewController: UIViewController, UITableViewDataSource, UITabl
         allProjectsTable.reloadData()
     }
     
+
+}
+
+extension AllProjectsViewController: UITableViewDataSource, UITableViewDelegate{
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("allProjectsCell", forIndexPath: indexPath)
-        cell.textLabel?.text = projects[indexPath.item].name
+        let cell = tableView.dequeueReusableCellWithIdentifier("AllProjectsCell") as! AllProjectsViewCell
+        
+        cell.setupWithModel(projects[indexPath.row])
         
         return cell
     }
