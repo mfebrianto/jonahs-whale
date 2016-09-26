@@ -7,6 +7,68 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Setup Login View Controller-->
+        <scene sceneID="gQY-T9-XyP">
+            <objects>
+                <viewController id="DIJ-A0-3ze" customClass="SetupLoginViewController" customModule="JonahsWhale" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JxX-tw-5Ha"/>
+                        <viewControllerLayoutGuide type="bottom" id="RaP-vg-xbF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wv7-hk-mII">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noL-qI-NeB">
+                                <rect key="frame" x="186" y="285" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="X3z-ii-nPL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMH-XD-Kcj">
+                                <rect key="frame" x="186" y="363" width="188" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-gN-xMB">
+                                <rect key="frame" x="257" y="464" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="SCR-7U-u9v"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tc_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-fz-H4L">
+                                <rect key="frame" x="180" y="90" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="93I-F0-9h1"/>
+                                    <constraint firstAttribute="height" constant="128" id="lyP-KI-aau"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iBA-gN-xMB" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="7h1-R2-v2E"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="leading" secondItem="wv7-hk-mII" secondAttribute="leading" constant="186" id="EBr-dX-e6F"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="centerX" secondItem="iBA-gN-xMB" secondAttribute="centerX" id="FlZ-vV-ClH"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="top" secondItem="Sxf-fz-H4L" secondAttribute="bottom" constant="67" id="Hji-Ke-rKm"/>
+                            <constraint firstItem="Sxf-fz-H4L" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="Qki-vA-85j"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="leading" secondItem="mMH-XD-Kcj" secondAttribute="leading" id="Sye-PH-cvT"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="trailing" secondItem="mMH-XD-Kcj" secondAttribute="trailing" id="Uy9-as-KUC"/>
+                            <constraint firstItem="Sxf-fz-H4L" firstAttribute="top" secondItem="JxX-tw-5Ha" secondAttribute="bottom" constant="26" id="lLG-TO-HDO"/>
+                            <constraint firstItem="iBA-gN-xMB" firstAttribute="top" secondItem="mMH-XD-Kcj" secondAttribute="bottom" constant="71" id="rpr-lp-lpY"/>
+                            <constraint firstItem="mMH-XD-Kcj" firstAttribute="top" secondItem="noL-qI-NeB" secondAttribute="bottom" constant="48" id="tIN-Yy-xAY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="Ns7-sf-ky3" kind="show" id="aRG-Nn-eKW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dnl-TL-Af4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="-648"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -20,30 +82,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjw-cL-zIv">
-                                <rect key="frame" x="180" y="272" width="240" height="128"/>
+                                <rect key="frame" x="180" y="372" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0y-Wv-7mS">
-                                <rect key="frame" x="243" y="153" width="104" height="30"/>
+                                <rect key="frame" x="243" y="253" width="104" height="30"/>
                                 <state key="normal" title="get All Projects"/>
                                 <connections>
                                     <action selector="clickGetAllObjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dP-UI-40W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-KY-9MO">
-                                <rect key="frame" x="211" y="95" width="179" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-KY-9MO">
+                                <rect key="frame" x="211" y="195" width="179" height="30"/>
                                 <state key="normal" title="Configure Projects"/>
                                 <connections>
                                     <action selector="clickConfigureProjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gAt-li-Ytj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-9G-VJ3">
-                                <rect key="frame" x="243" y="208" width="115" height="30"/>
+                                <rect key="frame" x="243" y="308" width="115" height="30"/>
                                 <state key="normal" title="show all projects"/>
                                 <connections>
                                     <action selector="clickMonitoredProjects:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Liu-en-mFX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pe7-sW-UhT">
+                                <rect key="frame" x="250" y="127" width="100" height="30"/>
+                                <state key="normal" title="add repository"/>
+                                <connections>
+                                    <action selector="clickAddRepoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zh2-Eg-Co1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,7 +121,10 @@
                             <constraint firstItem="lzv-KY-9MO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="05Y-VC-wal"/>
                             <constraint firstItem="R0y-Wv-7mS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0b6-Uz-63C"/>
                             <constraint firstItem="ocM-9G-VJ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="22q-uz-NQE"/>
+                            <constraint firstItem="lzv-KY-9MO" firstAttribute="top" secondItem="pe7-sW-UhT" secondAttribute="bottom" constant="38" id="APL-JJ-07j"/>
                             <constraint firstItem="lzv-KY-9MO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="179:600" id="eE3-EX-jla"/>
+                            <constraint firstItem="pe7-sW-UhT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="63" id="k0S-u3-AyV"/>
+                            <constraint firstItem="pe7-sW-UhT" firstAttribute="centerX" secondItem="bjw-cL-zIv" secondAttribute="centerX" id="lEI-ze-cpf"/>
                             <constraint firstItem="bjw-cL-zIv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xzV-zr-92s"/>
                         </constraints>
                     </view>
@@ -61,6 +133,7 @@
                         <outlet property="consoleText" destination="bjw-cL-zIv" id="06I-XE-CQV"/>
                         <segue destination="Ns7-sf-ky3" kind="show" identifier="segueGalleryViewController" id="Upx-We-eir"/>
                         <segue destination="TUv-Az-d2W" kind="show" identifier="fromMainToAllProjects" id="SIY-Iz-xz9"/>
+                        <segue destination="DIJ-A0-3ze" kind="show" identifier="fromMainToLogin" id="X1B-Pd-A9H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,7 +207,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhQ-pO-A6e">
                                                     <rect key="frame" x="8" y="31" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -187,7 +260,11 @@
             <point key="canvasLocation" x="164" y="179"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tc_logo" width="112" height="112"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qi1-HA-Vx0"/>
+        <segue reference="eEs-pj-KxL"/>
+        <segue reference="aRG-Nn-eKW"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@
 		876D2CB41D93D12C002128DF /* AllProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2CB31D93D12C002128DF /* AllProjectsViewController.swift */; };
 		876D2CB81D94D45F002128DF /* AllProjectsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2CB71D94D45F002128DF /* AllProjectsViewCell.swift */; };
 		876D2CBA1D94DC0B002128DF /* AllProjectsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 876D2CB91D94DC0B002128DF /* AllProjectsViewCell.xib */; };
+		876D2CC21D98D034002128DF /* SetupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D2CC11D98D034002128DF /* SetupLoginViewController.swift */; };
 		8785B4761D867B4600286FAE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4751D867B4600286FAE /* GalleryViewController.swift */; };
 		8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785B4781D87491C00286FAE /* GalleryViewCell.swift */; };
 		8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8798AA3F1D7654DA00A4DAB2 /* Constants.swift */; };
@@ -39,6 +40,7 @@
 		876D2CB31D93D12C002128DF /* AllProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllProjectsViewController.swift; sourceTree = "<group>"; };
 		876D2CB71D94D45F002128DF /* AllProjectsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllProjectsViewCell.swift; sourceTree = "<group>"; };
 		876D2CB91D94DC0B002128DF /* AllProjectsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllProjectsViewCell.xib; sourceTree = "<group>"; };
+		876D2CC11D98D034002128DF /* SetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupLoginViewController.swift; sourceTree = "<group>"; };
 		8785B4751D867B4600286FAE /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		8785B4781D87491C00286FAE /* GalleryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
 		8798AA3F1D7654DA00A4DAB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8785B4751D867B4600286FAE /* GalleryViewController.swift */,
 				8798AA3F1D7654DA00A4DAB2 /* Constants.swift */,
 				876D2CB31D93D12C002128DF /* AllProjectsViewController.swift */,
+				876D2CC11D98D034002128DF /* SetupLoginViewController.swift */,
 				87B55DF21D69B7F200E298EB /* Main.storyboard */,
 				87B55DF51D69B7F200E298EB /* Assets.xcassets */,
 				87B55DF71D69B7F200E298EB /* LaunchScreen.storyboard */,
@@ -313,6 +316,7 @@
 				8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */,
 				8798AA481D76750700A4DAB2 /* Project.swift in Sources */,
 				8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */,
+				876D2CC21D98D034002128DF /* SetupLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

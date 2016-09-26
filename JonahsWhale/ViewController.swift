@@ -66,6 +66,12 @@ class ViewController: UIViewController {
     }
     
     
+
+    @IBAction func clickAddRepoButton(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("fromMainToLogin", sender: self)
+    }
+   
     
 }
 
