@@ -19,26 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noL-qI-NeB">
-                                <rect key="frame" x="186" y="285" width="188" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="X3z-ii-nPL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMH-XD-Kcj">
-                                <rect key="frame" x="186" y="363" width="188" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-gN-xMB">
-                                <rect key="frame" x="257" y="464" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="SCR-7U-u9v"/>
-                                </constraints>
-                                <state key="normal" title="Login"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tc_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-fz-H4L">
                                 <rect key="frame" x="180" y="90" width="240" height="128"/>
                                 <constraints>
@@ -46,23 +26,59 @@
                                     <constraint firstAttribute="height" constant="128" id="lyP-KI-aau"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-gN-xMB">
+                                <rect key="frame" x="257" y="464" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="SCR-7U-u9v"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="clickLogin:" destination="DIJ-A0-3ze" eventType="touchUpInside" id="UJO-0a-bcy"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="domain" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPt-tI-N0Z">
+                                <rect key="frame" x="186" y="265" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="xYY-Xx-i30"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noL-qI-NeB">
+                                <rect key="frame" x="186" y="338" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="fWD-BS-ltJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mMH-XD-Kcj">
+                                <rect key="frame" x="186" y="416" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="3zs-vS-xfs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iBA-gN-xMB" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="7h1-R2-v2E"/>
-                            <constraint firstItem="noL-qI-NeB" firstAttribute="leading" secondItem="wv7-hk-mII" secondAttribute="leading" constant="186" id="EBr-dX-e6F"/>
-                            <constraint firstItem="noL-qI-NeB" firstAttribute="centerX" secondItem="iBA-gN-xMB" secondAttribute="centerX" id="FlZ-vV-ClH"/>
-                            <constraint firstItem="noL-qI-NeB" firstAttribute="top" secondItem="Sxf-fz-H4L" secondAttribute="bottom" constant="67" id="Hji-Ke-rKm"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="Ocr-eW-izO"/>
                             <constraint firstItem="Sxf-fz-H4L" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="Qki-vA-85j"/>
-                            <constraint firstItem="noL-qI-NeB" firstAttribute="leading" secondItem="mMH-XD-Kcj" secondAttribute="leading" id="Sye-PH-cvT"/>
-                            <constraint firstItem="noL-qI-NeB" firstAttribute="trailing" secondItem="mMH-XD-Kcj" secondAttribute="trailing" id="Uy9-as-KUC"/>
+                            <constraint firstItem="mMH-XD-Kcj" firstAttribute="top" secondItem="noL-qI-NeB" secondAttribute="bottom" constant="48" id="aWc-VB-td2"/>
                             <constraint firstItem="Sxf-fz-H4L" firstAttribute="top" secondItem="JxX-tw-5Ha" secondAttribute="bottom" constant="26" id="lLG-TO-HDO"/>
-                            <constraint firstItem="iBA-gN-xMB" firstAttribute="top" secondItem="mMH-XD-Kcj" secondAttribute="bottom" constant="71" id="rpr-lp-lpY"/>
-                            <constraint firstItem="mMH-XD-Kcj" firstAttribute="top" secondItem="noL-qI-NeB" secondAttribute="bottom" constant="48" id="tIN-Yy-xAY"/>
+                            <constraint firstItem="mMH-XD-Kcj" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="nOH-j9-tqW"/>
+                            <constraint firstItem="noL-qI-NeB" firstAttribute="top" secondItem="SPt-tI-N0Z" secondAttribute="bottom" constant="43" id="piL-Vv-GUO"/>
+                            <constraint firstItem="iBA-gN-xMB" firstAttribute="top" secondItem="mMH-XD-Kcj" secondAttribute="bottom" constant="18" id="pzC-mG-YYO"/>
+                            <constraint firstItem="SPt-tI-N0Z" firstAttribute="centerX" secondItem="wv7-hk-mII" secondAttribute="centerX" id="u9o-RH-l8q"/>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="Ns7-sf-ky3" kind="show" id="aRG-Nn-eKW"/>
+                        <outlet property="domainTextField" destination="SPt-tI-N0Z" id="F7i-xf-9b3"/>
+                        <outlet property="passwordTextField" destination="mMH-XD-Kcj" id="jEV-89-Rbq"/>
+                        <outlet property="usernameTextField" destination="noL-qI-NeB" id="VAf-gj-gjG"/>
+                        <segue destination="TUv-Az-d2W" kind="show" identifier="segueFromLoginToAllProjects" id="ZCX-xZ-hMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnl-TL-Af4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,7 +280,7 @@
         <image name="tc_logo" width="112" height="112"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ZCX-xZ-hMq"/>
         <segue reference="eEs-pj-KxL"/>
-        <segue reference="aRG-Nn-eKW"/>
     </inferredMetricsTieBreakers>
 </document>

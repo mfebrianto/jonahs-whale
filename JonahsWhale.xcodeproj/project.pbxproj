@@ -26,6 +26,9 @@
 		87B55DF41D69B7F200E298EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF21D69B7F200E298EB /* Main.storyboard */; };
 		87B55DF61D69B7F200E298EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF51D69B7F200E298EB /* Assets.xcassets */; };
 		87B55DF91D69B7F200E298EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B55DF71D69B7F200E298EB /* LaunchScreen.storyboard */; };
+		87F009CA1D9A22820041E2FB /* Agent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009C81D9A22820041E2FB /* Agent+CoreDataProperties.swift */; };
+		87F009CB1D9A22820041E2FB /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009C91D9A22820041E2FB /* Agent.swift */; };
+		87F009CD1D9A4B480041E2FB /* AgentDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009CC1D9A4B480041E2FB /* AgentDao.swift */; };
 		98FC1213D398E97E57E9AD55 /* Pods_JonahsWhale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		87B55DF51D69B7F200E298EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87B55DF81D69B7F200E298EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87B55DFA1D69B7F200E298EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87F009C81D9A22820041E2FB /* Agent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Agent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		87F009C91D9A22820041E2FB /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		87F009CC1D9A4B480041E2FB /* AgentDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentDao.swift; sourceTree = "<group>"; };
 		D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				876298661D8F3FC500AA857A /* ProjectDao.swift */,
+				87F009CC1D9A4B480041E2FB /* AgentDao.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -122,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				876298621D8F1B7700AA857A /* xml */,
+				87F009C81D9A22820041E2FB /* Agent+CoreDataProperties.swift */,
+				87F009C91D9A22820041E2FB /* Agent.swift */,
 				8762985E1D8B4D9F00AA857A /* Project+CoreDataProperties.swift */,
 				8798AA471D76750700A4DAB2 /* Project.swift */,
 			);
@@ -302,9 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F009CB1D9A22820041E2FB /* Agent.swift in Sources */,
 				876298671D8F3FC500AA857A /* ProjectDao.swift in Sources */,
 				87B55DF11D69B7F200E298EB /* ViewController.swift in Sources */,
 				87B55DEF1D69B7F200E298EB /* AppDelegate.swift in Sources */,
+				87F009CD1D9A4B480041E2FB /* AgentDao.swift in Sources */,
+				87F009CA1D9A22820041E2FB /* Agent+CoreDataProperties.swift in Sources */,
 				8762985F1D8B4D9F00AA857A /* Project+CoreDataProperties.swift in Sources */,
 				876D2CB81D94D45F002128DF /* AllProjectsViewCell.swift in Sources */,
 				8798AA401D7654DA00A4DAB2 /* Constants.swift in Sources */,

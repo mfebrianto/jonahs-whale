@@ -15,8 +15,25 @@ import XCGLogger
 
 class SetupLoginViewController: UIViewController {
     
+    @IBOutlet var domainTextField: UITextField!
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
     var projects: [Project] = []
     let log = XCGLogger.defaultInstance()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = false
 
+    }
+
+
+    @IBAction func clickLogin(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("segueFromLoginToAllProjects", sender: self)
+        
+        
+    }
 
 }
