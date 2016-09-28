@@ -13,13 +13,22 @@ import XCGLogger
 class ViewController: UIViewController {
     
     @IBOutlet var consoleText: UITextView!
+    @IBOutlet var configuredAgentList: UITableView!
     
+    var agents: [Agent] = []
     let log = XCGLogger.defaultInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.navigationBar.hidden = true
+        
+        configuredAgentList.delegate = self
+        configuredAgentList.dataSource = self
+        
+        configuredAgentList.registerNib(UINib(nibName: "AvailableAgentCell", bundle: nil), forCellReuseIdentifier: "AvailableAgentCell")
+        
+        agents = AgentDao().getAll()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,6 +81,25 @@ class ViewController: UIViewController {
         self.performSegueWithIdentifier("fromMainToLogin", sender: self)
     }
    
+    
+}
+
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate{
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return agents.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("AvailableAgentCell",
+                                                               forIndexPath: indexPath) as! AvailableAgentCell
+        
+        cell.setupWithModel(agents[indexPath.item])
+        
+        return cell
+    }
+    
     
 }
 

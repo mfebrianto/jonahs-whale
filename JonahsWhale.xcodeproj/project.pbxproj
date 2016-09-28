@@ -29,6 +29,8 @@
 		87F009CA1D9A22820041E2FB /* Agent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009C81D9A22820041E2FB /* Agent+CoreDataProperties.swift */; };
 		87F009CB1D9A22820041E2FB /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009C91D9A22820041E2FB /* Agent.swift */; };
 		87F009CD1D9A4B480041E2FB /* AgentDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009CC1D9A4B480041E2FB /* AgentDao.swift */; };
+		87F009D11D9B4D8B0041E2FB /* AvailableAgentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87F009D01D9B4D8B0041E2FB /* AvailableAgentCell.xib */; };
+		87F009D31D9B52360041E2FB /* AvailableAgentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F009D21D9B52360041E2FB /* AvailableAgentCell.swift */; };
 		98FC1213D398E97E57E9AD55 /* Pods_JonahsWhale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648CFA4F538DF25CDE8E30B1 /* Pods_JonahsWhale.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		87F009C81D9A22820041E2FB /* Agent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Agent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		87F009C91D9A22820041E2FB /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		87F009CC1D9A4B480041E2FB /* AgentDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentDao.swift; sourceTree = "<group>"; };
+		87F009D01D9B4D8B0041E2FB /* AvailableAgentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableAgentCell.xib; sourceTree = "<group>"; };
+		87F009D21D9B52360041E2FB /* AvailableAgentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableAgentCell.swift; sourceTree = "<group>"; };
 		D9962FD0B9CAAA64CAE8ECCD /* Pods-JonahsWhale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JonahsWhale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JonahsWhale/Pods-JonahsWhale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +117,8 @@
 				8785B4781D87491C00286FAE /* GalleryViewCell.swift */,
 				876D2CB71D94D45F002128DF /* AllProjectsViewCell.swift */,
 				876D2CB91D94DC0B002128DF /* AllProjectsViewCell.xib */,
+				87F009D01D9B4D8B0041E2FB /* AvailableAgentCell.xib */,
+				87F009D21D9B52360041E2FB /* AvailableAgentCell.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B55DF91D69B7F200E298EB /* LaunchScreen.storyboard in Resources */,
+				87F009D11D9B4D8B0041E2FB /* AvailableAgentCell.xib in Resources */,
 				87B55DF61D69B7F200E298EB /* Assets.xcassets in Resources */,
 				876D2CBA1D94DC0B002128DF /* AllProjectsViewCell.xib in Resources */,
 				87B55DF41D69B7F200E298EB /* Main.storyboard in Resources */,
@@ -325,6 +332,7 @@
 				872980431D8958120037D5B0 /* RAReorderableLayout.swift in Sources */,
 				876298641D8F1C8D00AA857A /* ProjectXml.swift in Sources */,
 				8762985D1D8B2EE800AA857A /* JonahsWhale.xcdatamodeld in Sources */,
+				87F009D31D9B52360041E2FB /* AvailableAgentCell.swift in Sources */,
 				8785B4791D87491C00286FAE /* GalleryViewCell.swift in Sources */,
 				8798AA481D76750700A4DAB2 /* Project.swift in Sources */,
 				8798AA451D7674B200A4DAB2 /* ProjectService.swift in Sources */,

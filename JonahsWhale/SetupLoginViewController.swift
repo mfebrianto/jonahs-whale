@@ -30,10 +30,11 @@ class SetupLoginViewController: UIViewController {
 
 
     @IBAction func clickLogin(sender: AnyObject) {
-        
+        AgentDao().save(usernameTextField.text!,
+                        password: passwordTextField.text!,
+                        uri: domainTextField.text!)
+
         self.performSegueWithIdentifier("segueFromLoginToAllProjects", sender: self)
-        
-        
     }
 
 }

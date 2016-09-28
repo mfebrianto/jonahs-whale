@@ -35,4 +35,22 @@ class AgentDao {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
+    
+    
+    func getAll() -> [Agent] {
+        let managedContext = appDelegate.managedObjectContext
+        var agents:[Agent] = []
+        
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            agents = results as! [Agent]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return agents
+    }
 }
