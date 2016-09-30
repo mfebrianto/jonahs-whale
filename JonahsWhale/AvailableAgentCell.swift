@@ -20,7 +20,7 @@ class AvailableAgentCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupWithModel(agent: Agent) {
+    func setupWithModel(_ agent: Agent) {
         self.agentName.text = agent.username
     }
     

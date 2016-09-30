@@ -20,21 +20,21 @@ class SetupLoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     var projects: [Project] = []
-    let log = XCGLogger.defaultInstance()
+    let log = XCGLogger.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
 
     }
 
 
-    @IBAction func clickLogin(sender: AnyObject) {
+    @IBAction func clickLogin(_ sender: AnyObject) {
         AgentDao().save(usernameTextField.text!,
                         password: passwordTextField.text!,
                         uri: domainTextField.text!)
 
-        self.performSegueWithIdentifier("segueFromLoginToAllProjects", sender: self)
+        self.performSegue(withIdentifier: "segueFromLoginToAllProjects", sender: self)
     }
 
 }

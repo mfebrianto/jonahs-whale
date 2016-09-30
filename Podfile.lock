@@ -1,21 +1,23 @@
 PODS:
-  - Alamofire (3.4.1)
-  - RAReorderableLayout (0.4.1)
-  - SWXMLHash (2.5.0)
-  - XCGLogger (3.5.3)
+  - Alamofire (4.0.1)
+  - RAReorderableLayout (0.6.1)
+  - SWXMLHash (3.0.2)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
-  - RAReorderableLayout
-  - SWXMLHash (~> 2.5.0)
-  - XCGLogger (~> 3.5.3)
+  - Alamofire (~> 4.0)
+  - RAReorderableLayout (~> 0.6.1)
+  - SWXMLHash (~> 3.0.0)
+  - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  RAReorderableLayout: d5d3839bfc2a732a0463f08a6c91d76c9951cb77
-  SWXMLHash: 04158642e0c90c52274db7914032edd41bed9a41
-  XCGLogger: dbe4a9c7bbaac73717a34e0b94c64fd151c74d6c
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  RAReorderableLayout: 5b6b87dd4022ee1747fd475623b14f5df940f754
+  SWXMLHash: e0f6935971f01b06fb228cf435510d998ecde647
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 9cd862f0c17494cc9d57680216bbfdc0e3bf28b2
+PODFILE CHECKSUM: c483eae4d86015c1517597143c0b89aa1b5e6d62
 
 COCOAPODS: 1.0.1

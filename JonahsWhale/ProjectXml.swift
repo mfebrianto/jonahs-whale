@@ -29,7 +29,7 @@ final class ProjectXml: XMLIndexerDeserializable {
         self.webUrl = webUrl
     }
     
-    static func getDescription(node: XMLIndexer) -> String {
+    static func getDescription(_ node: XMLIndexer) -> String {
         var description: String = ""
         
         do {
@@ -39,13 +39,13 @@ final class ProjectXml: XMLIndexerDeserializable {
             description = ""
         }
         catch {
-            print(NSThread.callStackSymbols())
+            print(Thread.callStackSymbols)
         }
         
         return description
     }
     
-    static func getParentProjectId(node: XMLIndexer) -> String {
+    static func getParentProjectId(_ node: XMLIndexer) -> String {
         var parentProjectId: String = ""
         
         do {
@@ -55,14 +55,14 @@ final class ProjectXml: XMLIndexerDeserializable {
             parentProjectId = ""
         }
         catch {
-            print(NSThread.callStackSymbols())
+            print(Thread.callStackSymbols)
         }
         
         return parentProjectId
     }
     
     
-    static func deserialize(node: XMLIndexer) throws -> ProjectXml {
+    static func deserialize(_ node: XMLIndexer) throws -> ProjectXml {
         return try ProjectXml(
             id: node.value(ofAttribute: "id"),
             name: node.value(ofAttribute: "name"),
@@ -73,7 +73,7 @@ final class ProjectXml: XMLIndexerDeserializable {
         )
     }
     
-    static func validate(value: String) -> String {
+    static func validate(_ value: String) -> String {
         if value.isEmpty {
             return ""
         }

@@ -14,18 +14,18 @@ import CoreData
 class ProjectDao {
     
     let entityName = "Project"
-    let log = XCGLogger.defaultInstance()
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//    let log = XCGLogger.defaultInstance()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func saveAll(projectXmls: [ProjectXml]) {
+    func saveAll(_ projectXmls: [ProjectXml]) {
         let managedContext = appDelegate.managedObjectContext
-        let entity =  NSEntityDescription.entityForName(entityName, inManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entity(forEntityName: entityName, in:managedContext)
         
             for projectXml in projectXmls {
                 let project = NSManagedObject(entity: entity!,
-                                        insertIntoManagedObjectContext:managedContext)
+                                        insertInto:managedContext)
         
-                log.debug("trying to save : " + projectXml.name!)
+//                log.debug("trying to save : " + projectXml.name!)
         
                 project.setValue(projectXml.id, forKey: "id")
                 project.setValue(projectXml.name, forKey: "name")

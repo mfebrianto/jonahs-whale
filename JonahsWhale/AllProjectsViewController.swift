@@ -13,25 +13,25 @@ import XCGLogger
 class AllProjectsViewController: UIViewController {
     
     var projects: [Project] = []
-    let log = XCGLogger.defaultInstance()
+    let log = XCGLogger.default
 
     @IBOutlet var allProjectsTable: UITableView!
     
     override func viewDidLoad() {
-//        log.debug("viewdidLoad")
+        log.debug("viewdidLoad")
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
         allProjectsTable.dataSource = self
         allProjectsTable.delegate = self
 
-        allProjectsTable.registerNib(UINib(nibName: "AllProjectsViewCell", bundle: nil), forCellReuseIdentifier: "AllProjectsCell")
+        allProjectsTable.register(UINib(nibName: "AllProjectsViewCell", bundle: nil), forCellReuseIdentifier: "AllProjectsCell")
         
 //        log.debug("get all projects")
         projects = ProjectDao().getAll()
 //        log.debug(projects.count)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         allProjectsTable.reloadData()
     }
@@ -41,14 +41,14 @@ class AllProjectsViewController: UIViewController {
 
 extension AllProjectsViewController: UITableViewDataSource, UITableViewDelegate{
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AllProjectsCell") as! AllProjectsViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllProjectsCell") as! AllProjectsViewCell
         
-        cell.setupWithModel(projects[indexPath.row])
+        cell.setupWithModel(projects[(indexPath as NSIndexPath).row])
         
         return cell
     }

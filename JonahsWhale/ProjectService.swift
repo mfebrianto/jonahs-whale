@@ -19,19 +19,19 @@ final class ProjectService {
     var valueHandle :((String) -> ())?
     var errorHandle :((NSError)->())?
     
-    func success(value:(String) -> ())->Self{
+    func success(_ value:@escaping (String) -> ())->Self{
         //pass success handle
         self.valueHandle = value
         return self
     }
     
-    func error(error:(NSError)->())->Self{
+    func error(_ error:@escaping (NSError)->())->Self{
         //pass error handle
         self.errorHandle = error
         return self
     }
     
-    static func parse(result: String) -> [ProjectXml] {
+    static func parse(_ result: String) -> [ProjectXml] {
         let parsedXml = SWXMLHash.parse(result)
         var projectXmls: [ProjectXml] = []
         

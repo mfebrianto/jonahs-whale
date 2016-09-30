@@ -229,6 +229,7 @@
 					87B55DEA1D69B7F100E298EB = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = C57L7P8RB7;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -459,6 +460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mfebrianto.engineering.JonahsWhale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -474,6 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mfebrianto.engineering.JonahsWhale;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

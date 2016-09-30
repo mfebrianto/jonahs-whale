@@ -3,7 +3,7 @@
 //  XCGLogger: https://github.com/DaveWoodCom/XCGLogger
 //
 //  Created by Dave Wood on 2014-06-06.
-//  Copyright (c) 2014 Dave Wood, Cerebral Gardens.
+//  Copyright © 2014 Dave Wood, Cerebral Gardens.
 //  Some rights reserved: https://github.com/DaveWoodCom/XCGLogger/blob/master/LICENSE.txt
 //
 
@@ -23,7 +23,7 @@ FOUNDATION_EXPORT const unsigned char XCGLoggerVersionString[];
  @param tryBlock Block/Closure to execute that could thrown an Objective-C exception
  @param catchBlock Block/Closure to use if an exception is thrown in the tryBlock
  @param finallyBlock Block/Closure to execute after the tryBlock (or catchBlock if an exception was thrown)
-
+ 
  @note Loosely based on the code here: https://stackoverflow.com/a/35003095/144857 and here: https://github.com/williamFalcon/SwiftTryCatch
  */
 NS_INLINE void _try(void(^_Nonnull tryBlock)(void), void(^_Nonnull catchBlock)(NSException* _Nonnull exception), void(^_Nonnull finallyBlock)(void)) {

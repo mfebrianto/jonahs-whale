@@ -23,7 +23,7 @@ class AllProjectsViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupWithModel(project: Project) {
+    func setupWithModel(_ project: Project) {
         self.projectNameLabel.text = project.name
     }
     

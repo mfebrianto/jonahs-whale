@@ -14,17 +14,17 @@ import CoreData
 class AgentDao {
     
     let entityName = "Agent"
-    let log = XCGLogger.defaultInstance()
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let log = XCGLogger.default
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    func save(username: String, password: String, uri: String) {
+    func save(_ username: String, password: String, uri: String) {
         let managedContext = appDelegate.managedObjectContext
-        let entity =  NSEntityDescription.entityForName(entityName, inManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entity(forEntityName: entityName, in:managedContext)
 
         let agent = NSManagedObject(entity: entity!,
-                        insertIntoManagedObjectContext:managedContext)
+                        insertInto:managedContext)
         
-        agent.setValue(NSUUID().UUIDString, forKey: "id")
+        agent.setValue(UUID().uuidString, forKey: "id")
         agent.setValue(username, forKey: "username")
         agent.setValue(password, forKey: "password")
         agent.setValue(uri, forKey: "uri")

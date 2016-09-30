@@ -15,25 +15,26 @@ class ViewController: UIViewController {
     @IBOutlet var consoleText: UITextView!
     @IBOutlet var configuredAgentList: UITableView!
     
+    let log = XCGLogger.default
+    
     var agents: [Agent] = []
-    let log = XCGLogger.defaultInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.navigationBar.isHidden = true
         
         configuredAgentList.delegate = self
         configuredAgentList.dataSource = self
         
-        configuredAgentList.registerNib(UINib(nibName: "AvailableAgentCell", bundle: nil), forCellReuseIdentifier: "AvailableAgentCell")
+        configuredAgentList.register(UINib(nibName: "AvailableAgentCell", bundle: nil), forCellReuseIdentifier: "AvailableAgentCell")
         
         agents = AgentDao().getAll()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,14 +42,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clickConfigureProjects(sender: AnyObject) {
+    @IBAction func clickConfigureProjects(_ sender: AnyObject) {
         log.debug("getting new")
         
         ProjectService.getAll()
             .success { (value) in
                 self.consoleText.text = value
                 self.log.debug("will change to gallery view controller")
-                self.performSegueWithIdentifier("segueGalleryViewController", sender: self)
+                self.performSegue(withIdentifier: "segueGalleryViewController", sender: self)
                 
             }
             .error { (error) in
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
             }
     }
 
-    @IBAction func clickGetAllObjects(sender: AnyObject) {
+    @IBAction func clickGetAllObjects(_ sender: AnyObject) {
         log.debug("getting existing")
         
         let projects = ProjectDao().getAll()
@@ -69,16 +70,16 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func clickMonitoredProjects(sender: AnyObject) {
+    @IBAction func clickMonitoredProjects(_ sender: AnyObject) {
         
-        self.performSegueWithIdentifier("fromMainToAllProjects", sender: self)
+        self.performSegue(withIdentifier: "fromMainToAllProjects", sender: self)
     }
     
     
 
-    @IBAction func clickAddRepoButton(sender: AnyObject) {
+    @IBAction func clickAddRepoButton(_ sender: AnyObject) {
         
-        self.performSegueWithIdentifier("fromMainToLogin", sender: self)
+        self.performSegue(withIdentifier: "fromMainToLogin", sender: self)
     }
    
     
@@ -87,15 +88,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return agents.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AvailableAgentCell",
-                                                               forIndexPath: indexPath) as! AvailableAgentCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableAgentCell",
+                                                               for: indexPath) as! AvailableAgentCell
         
-        cell.setupWithModel(agents[indexPath.item])
+        cell.setupWithModel(agents[(indexPath as NSIndexPath).item])
         
         return cell
     }

@@ -21,10 +21,10 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
         self.title = "zurück";
         let nib = UINib(nibName: "galleryCollectionCell", bundle: nil)
-        galleryCollectionView.registerNib(nib, forCellWithReuseIdentifier: "cell")
+        galleryCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
         
@@ -40,9 +40,9 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
         self.title = "zurück";
     }
     
@@ -81,7 +81,7 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
 //        return 2
 //    }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        if section == 0 {
 //            
 //            print(">>>>section>>0>>>"+String(label0.count))
@@ -96,8 +96,8 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         return self.label0.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("galleryCollectionCell", forIndexPath: indexPath) as! GalleryViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryCollectionCell", for: indexPath) as! GalleryViewCell
         
 //        if indexPath.section == 0 {
 //            
@@ -111,24 +111,24 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
 //            cell.label = label1[indexPath.item]
 //        }
         
-        print(">>>>>>>>>"+label0[indexPath.item])
+        print(">>>>>>>>>"+label0[(indexPath as NSIndexPath).item])
         
-        cell.dummyLabel.text = label0[indexPath.item]
+        cell.dummyLabel.text = label0[(indexPath as NSIndexPath).item]
         
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+        print("You selected cell #\((indexPath as NSIndexPath).item)!")
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let screenRect = UIScreen.mainScreen().bounds
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenRect = UIScreen.main.bounds
         let screenWidth: CGFloat = screenRect.size.width
         let cellWidth: Float = Float(screenWidth) / 5.0
         //Replace the divisor with the column count requirement. Make sure to have it in float.
-        let size = CGSizeMake(CGFloat(cellWidth), CGFloat(cellWidth))
+        let size = CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth))
         return size
     }
     
@@ -173,9 +173,9 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
 //    func scrollTrigerPaddingInCollectionView(collectionView: UICollectionView) -> UIEdgeInsets
 //    func scrollSpeedValueInCollectionView(collectionView: UICollectionView) -> CGFloat
     
-    @IBAction func clickBack(sender: AnyObject) {
+    @IBAction func clickBack(_ sender: AnyObject) {
         
-        self.performSegueWithIdentifier("segueViewFrGallery", sender: self)
+        self.performSegue(withIdentifier: "segueViewFrGallery", sender: self)
         
     }
 
