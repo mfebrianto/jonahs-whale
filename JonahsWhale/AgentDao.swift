@@ -41,11 +41,11 @@ class AgentDao {
         let managedContext = appDelegate.managedObjectContext
         var agents:[Agent] = []
         
-        let fetchRequest = NSFetchRequest(entityName: entityName)
+        let fetchRequest = NSFetchRequest<Agent>(entityName: entityName)
         
         do {
             let results =
-                try managedContext.executeFetchRequest(fetchRequest)
+                try managedContext.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
             agents = results as! [Agent]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")

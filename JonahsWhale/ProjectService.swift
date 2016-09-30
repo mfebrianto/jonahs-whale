@@ -14,7 +14,7 @@ import CoreData
 
 final class ProjectService {
     
-    let log = XCGLogger.defaultInstance()
+    let log = XCGLogger.default
     
     var valueHandle :((String) -> ())?
     var errorHandle :((NSError)->())?
@@ -53,18 +53,18 @@ final class ProjectService {
             Constants.Teamcity.restPath + "projects"
 
         
-        Alamofire.request(.GET, url)
+        Alamofire.request(url)
             .validate()
             .responseString { response in
                 switch response.result {
-                case .Success(let value):
+                case .success(let value):
                     projectService.valueHandle?(value)
                     let projectXmls = parse(value)
                     ProjectDao().deleteAll()
                     ProjectDao().saveAll(projectXmls)
                     
-                case .Failure(let error):
-                    projectService.errorHandle?(error)
+                case .failure(let error):
+                    projectService.errorHandle?(error as NSError)
                 }
         }
         

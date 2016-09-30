@@ -17,7 +17,7 @@ class AllProjectsViewCell: UITableViewCell {
     
     @IBOutlet var monitoredSwitch: UISwitch!
     
-    let log = XCGLogger.defaultInstance()
+    let log = XCGLogger.default
     
     override func awakeFromNib() {
         super.awakeFromNib()

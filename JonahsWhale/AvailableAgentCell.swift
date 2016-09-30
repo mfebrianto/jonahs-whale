@@ -14,7 +14,7 @@ class AvailableAgentCell: UITableViewCell {
     
     @IBOutlet var agentName: UILabel!
     
-    let log = XCGLogger.defaultInstance()
+    let log = XCGLogger.default
     
     override func awakeFromNib() {
         super.awakeFromNib()

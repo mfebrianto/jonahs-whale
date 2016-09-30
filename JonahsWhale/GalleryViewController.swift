@@ -96,24 +96,35 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         return self.label0.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryCollectionCell", for: indexPath) as! GalleryViewCell
+//        
+////        if indexPath.section == 0 {
+////            
+////            print(">>>>>>>>>index>>0>>"+String(indexPath.item))
+////
+////            cell.label = label0[indexPath.item]
+////        }else {
+////            
+////            print(">>>>>>>>>index>>1>>"+String(indexPath.item))
+////            
+////            cell.label = label1[indexPath.item]
+////        }
+//        
+//        print(">>>>>>>>>"+label0[(indexPath as NSIndexPath).item])
+//        
+//        cell.dummyLabel.text = label0[(indexPath as NSIndexPath).item]
+//        
+//        return cell
+//    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "galleryCollectionCell", for: indexPath) as! GalleryViewCell
         
-//        if indexPath.section == 0 {
-//            
-//            print(">>>>>>>>>index>>0>>"+String(indexPath.item))
-//
-//            cell.label = label0[indexPath.item]
-//        }else {
-//            
-//            print(">>>>>>>>>index>>1>>"+String(indexPath.item))
-//            
-//            cell.label = label1[indexPath.item]
-//        }
-        
-        print(">>>>>>>>>"+label0[(indexPath as NSIndexPath).item])
-        
         cell.dummyLabel.text = label0[(indexPath as NSIndexPath).item]
+
         
         return cell
     }

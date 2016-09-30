@@ -46,11 +46,11 @@ class ProjectDao {
     
     func deleteAll() {
         let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: entityName)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        let fetchRequest = NSFetchRequest<Project>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         
         do {
-            try managedContext.executeRequest(deleteRequest)
+            try managedContext.execute(deleteRequest)
             try managedContext.save()
         } catch {
             print (error)
@@ -63,11 +63,11 @@ class ProjectDao {
         let managedContext = appDelegate.managedObjectContext
         var projects:[Project] = []
         
-        let fetchRequest = NSFetchRequest(entityName: entityName)
+        let fetchRequest = NSFetchRequest<Project>(entityName: entityName)
         
         do {
             let results =
-                try managedContext.executeFetchRequest(fetchRequest)
+                try managedContext.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
             projects = results as! [Project]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
