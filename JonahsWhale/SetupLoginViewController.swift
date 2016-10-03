@@ -30,11 +30,27 @@ class SetupLoginViewController: UIViewController {
 
 
     @IBAction func clickLogin(_ sender: AnyObject) {
-        AgentDao().save(usernameTextField.text!,
-                        password: passwordTextField.text!,
-                        uri: domainTextField.text!)
-
+        saveAgentDataAndFetchProjects()
         self.performSegue(withIdentifier: "segueFromLoginToAllProjects", sender: self)
+    }
+    
+    func saveAgentDataAndFetchProjects(){
+        var agent: Agent
+        agent = AgentDao().save(usernameTextField.text!,
+                                                password: passwordTextField.text!,
+                                                uri: domainTextField.text!)
+        
+        
+        ProjectService.getAll(domain: agent.uri!,
+                              username: agent.username!,
+                              password: agent.password!)
+            .success { (value) in
+                print(">>>>>setup login view controller success")
+            }
+            .error { (error) in
+                print("error = \(error)")
+            }
+
     }
 
 }

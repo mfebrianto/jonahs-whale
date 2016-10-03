@@ -17,7 +17,7 @@ class AgentDao {
     let log = XCGLogger.default
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    func save(_ username: String, password: String, uri: String) {
+    func save(_ username: String, password: String, uri: String) -> Agent {
         let managedContext = appDelegate.managedObjectContext
         let entity =  NSEntityDescription.entity(forEntityName: entityName, in:managedContext)
 
@@ -34,6 +34,8 @@ class AgentDao {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
+        
+        return agent as! Agent
     }
     
     

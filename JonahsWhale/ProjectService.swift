@@ -45,14 +45,18 @@ final class ProjectService {
     }
     
     static func getAll() -> ProjectService {
+        return getAll(domain: Constants.Teamcity.domain,
+                      username: Constants.Teamcity.username,
+                      password: Constants.Teamcity.password)
+    }
+    
+    static func getAll(domain: String, username: String, password: String) -> ProjectService {
         let projectService = ProjectService()
         let url = Constants.Teamcity.prot + "://" +
-            Constants.Teamcity.username + ":" +
-            Constants.Teamcity.password + "@" +
-            Constants.Teamcity.domain +
+            username + ":" + password + "@" + domain +
             Constants.Teamcity.restPath + "projects"
-
-        
+    
+    
         Alamofire.request(url)
             .validate()
             .responseString { response in
@@ -60,15 +64,16 @@ final class ProjectService {
                 case .success(let value):
                     projectService.valueHandle?(value)
                     let projectXmls = parse(value)
+    
                     ProjectDao().deleteAll()
                     ProjectDao().saveAll(projectXmls)
-                    
+    
                 case .failure(let error):
                     projectService.errorHandle?(error as NSError)
-                }
+            }
         }
-        
+    
         return projectService
     }
-    
+
 }
