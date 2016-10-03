@@ -17,7 +17,7 @@ class ProjectDao {
 //    let log = XCGLogger.defaultInstance()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func saveAll(_ projectXmls: [ProjectXml]) {
+    func saveAll(_ projectXmls: [ProjectXml], agent: Agent) {
         let managedContext = appDelegate.managedObjectContext
         let entity =  NSEntityDescription.entity(forEntityName: entityName, in:managedContext)
         
@@ -33,6 +33,8 @@ class ProjectDao {
                 project.setValue(projectXml.parentProjectId, forKey: "parentProjectId")
                 project.setValue(projectXml.href, forKey: "href")
                 project.setValue(projectXml.webUrl, forKey: "webUrl")
+                
+                project.setValue(NSSet(object: agent), forKey: "agent")
         
                 do {
                     try managedContext.save()

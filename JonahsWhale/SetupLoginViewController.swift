@@ -41,9 +41,7 @@ class SetupLoginViewController: UIViewController {
                                                 uri: domainTextField.text!)
         
         
-        ProjectService.getAll(domain: agent.uri!,
-                              username: agent.username!,
-                              password: agent.password!)
+        ProjectService.getAll(agent: agent)
             .success { (value) in
                 print(">>>>>setup login view controller success")
             }

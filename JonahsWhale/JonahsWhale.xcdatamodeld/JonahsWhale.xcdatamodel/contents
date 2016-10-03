@@ -5,7 +5,6 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uri" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="agent" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName=".Project" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,10 +13,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="parentProjectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="webUrl" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agent" inverseName="projects" inverseEntity="Agent" syncable="YES"/>
+        <relationship name="agent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Agent" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agent" positionX="-63" positionY="27" width="128" height="120"/>
+        <element name="Agent" positionX="-63" positionY="27" width="128" height="105"/>
         <element name="Project" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

@@ -45,15 +45,21 @@ final class ProjectService {
     }
     
     static func getAll() -> ProjectService {
-        return getAll(domain: Constants.Teamcity.domain,
-                      username: Constants.Teamcity.username,
-                      password: Constants.Teamcity.password)
+        
+        let agent = Agent()
+        agent.uri = Constants.Teamcity.domain
+        agent.username = Constants.Teamcity.username
+        agent.password = Constants.Teamcity.password
+        
+        return getAll(agent: agent)
     }
     
-    static func getAll(domain: String, username: String, password: String) -> ProjectService {
+    static func getAll(agent: Agent) -> ProjectService {
         let projectService = ProjectService()
         let url = Constants.Teamcity.prot + "://" +
-            username + ":" + password + "@" + domain +
+            agent.username! as String + ":" +
+            agent.password! as String + "@" +
+            agent.uri! as String +
             Constants.Teamcity.restPath + "projects"
     
     
@@ -66,7 +72,7 @@ final class ProjectService {
                     let projectXmls = parse(value)
     
                     ProjectDao().deleteAll()
-                    ProjectDao().saveAll(projectXmls)
+                    ProjectDao().saveAll(projectXmls, agent: agent)
     
                 case .failure(let error):
                     projectService.errorHandle?(error as NSError)
