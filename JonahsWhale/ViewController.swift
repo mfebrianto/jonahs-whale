@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         
         ProjectService.getAll()
             .success { (value) in
-                self.consoleText.text = value
+//                self.consoleText.text = value
                 self.log.debug("will change to gallery view controller")
-                self.performSegue(withIdentifier: "segueGalleryViewController", sender: self)
+//                self.performSegue(withIdentifier: "segueGalleryViewController", sender: self)
                 
             }
             .error { (error) in
@@ -93,7 +93,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableAgentCell",
+        let cell = configuredAgentList.dequeueReusableCell(withIdentifier: "AvailableAgentCell",
                                                                for: indexPath) as! AvailableAgentCell
         
         cell.setupWithModel(agents[(indexPath as NSIndexPath).item])
@@ -101,6 +101,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: "segueGalleryViewController", sender: self)
+        
+    }
+
     
 }
 
