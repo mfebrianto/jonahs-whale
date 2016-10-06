@@ -25,7 +25,6 @@ class SetupLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-
     }
 
 

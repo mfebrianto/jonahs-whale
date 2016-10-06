@@ -164,7 +164,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7nO-D1-hBw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nVE-Tf-sQI">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-jF-M7q">
@@ -190,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="975.20000000000005" y="969.26536731634189"/>
         </scene>
-        <!--Gallery View Controller-->
+        <!--Title-->
         <scene sceneID="LON-Tb-VCX">
             <objects>
                 <viewController id="Ns7-sf-ky3" customClass="GalleryViewController" customModule="JonahsWhale" customModuleProvider="target" sceneMemberID="viewController">
@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ne1-ME-zpp">
-                                <frame key="frameInset" minX="20" minY="77" width="545" height="503"/>
+                                <frame key="frameInset" minX="20" minY="77" width="339" height="503"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KJi-JF-Qrj" customClass="RAReorderableLayout" customModule="JonahsWhale" customModuleProvider="target">
@@ -246,14 +246,25 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="hha-D2-hc9">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="XSd-Z0-84l">
+                            <connections>
+                                <action selector="clickEdit:" destination="Ns7-sf-ky3" id="HRk-CG-msr"/>
+                                <segue destination="TUv-Az-d2W" kind="show" id="kUq-6F-nJR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editButton" destination="XSd-Z0-84l" id="eyt-0S-P5F"/>
                         <outlet property="galleryCollectionView" destination="Ne1-ME-zpp" id="nea-AR-39P"/>
                         <segue destination="Vsq-xi-pBy" kind="show" identifier="segueViewFrGallery" id="eEs-pj-KxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgm-qG-4Lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="218"/>
+            <point key="canvasLocation" x="1908" y="217.24137931034485"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eTS-cA-XNy">
@@ -278,7 +289,7 @@
         <image name="tc_logo" width="112" height="112"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qi1-HA-Vx0"/>
-        <segue reference="SIY-Iz-xz9"/>
+        <segue reference="eEs-pj-KxL"/>
+        <segue reference="kUq-6F-nJR"/>
     </inferredMetricsTieBreakers>
 </document>

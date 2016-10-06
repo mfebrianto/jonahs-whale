@@ -15,6 +15,8 @@ import RAReorderableLayout
 class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RAReorderableLayoutDataSource {
     
     @IBOutlet var galleryCollectionView: UICollectionView!
+    @IBOutlet var editButton: UIBarButtonItem!
+    
     
     var label0: [String] = []
     var label1: [UILabel] = []
@@ -27,7 +29,7 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
         galleryCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
-        
+                
         for index in 0..<10 {
             let label = "Test 0"+String(index)
             label0.append(label)
@@ -184,10 +186,9 @@ class GalleryViewController: UIViewController, RAReorderableLayoutDelegate, RARe
 //    func scrollTrigerPaddingInCollectionView(collectionView: UICollectionView) -> UIEdgeInsets
 //    func scrollSpeedValueInCollectionView(collectionView: UICollectionView) -> CGFloat
     
-    @IBAction func clickBack(_ sender: AnyObject) {
-        
-        self.performSegue(withIdentifier: "segueViewFrGallery", sender: self)
-        
-    }
 
+    @IBAction func clickEdit(_ sender: UIBarButtonItem) {
+        
+                self.performSegue(withIdentifier: "segueViewFrGallery", sender: self)
+    }
 }
